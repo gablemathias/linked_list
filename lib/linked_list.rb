@@ -1,18 +1,20 @@
 class LinkedList # rubocop:disable Style/Documentation
-  attr_reader :list
+  attr_reader :head
 
   def initialize
-    @list = nil
+    @head = nil
   end
 
   def append(node)
-    if list.nil?
-      @list = create(node)
+    if head.nil?
+      @head = create(node)
     else
-      current_node = @list
+      current_node = @head
       current_node = current_node.next_node until current_node.next_node.nil?
       current_node.next_node = create(node)
     end
+
+    self
   end
 
   private
