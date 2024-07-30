@@ -30,10 +30,3 @@ class Node # rubocop:disable Style/Documentation
     @next_node = nil
   end
 end
-
-linkedlist = LinkedList.new
-
-linkedlist.append('node1')
-linkedlist.append('node2')
-linkedlist.append('node3')
-p linkedlist.list
