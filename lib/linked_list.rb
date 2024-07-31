@@ -88,6 +88,20 @@ class LinkedList # rubocop:disable Style/Documentation
     false
   end
 
+  def find(value)
+    current_node = head
+    count = 0
+
+    until current_node.nil?
+      return count if current_node.value == value
+
+      current_node = current_node.next_node
+      count += 1
+    end
+
+    nil
+  end
+
   private
 
   def create(node)

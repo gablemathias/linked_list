@@ -39,7 +39,7 @@ RSpec.describe LinkedList do
     end
 
     it 'returns a value from the list' do
-      expect(list.find('node2')).to eq('node2')
+      expect(list.find('node2')).to eq 1
       expect(list.find('not anymore')).to be_nil
     end
   end

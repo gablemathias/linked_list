@@ -13,3 +13,6 @@ require: rubocop-rspec
 
 Style/FrozenStringLiteralComment:
   Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
