@@ -17,6 +17,17 @@ class LinkedList # rubocop:disable Style/Documentation
     self
   end
 
+  def prepend(node)
+    if head.nil?
+      @head = create(node)
+      return self
+    end
+
+    old_head = head # A node
+    @head = create(node)
+    @head.next_node = old_head
+  end
+
   private
 
   def create(node)

@@ -11,8 +11,8 @@ RSpec.describe LinkedList do
 
     it 'adds a new node to the beginning of the list' do # rubocop:disable RSpec/MultipleExpectations
       list.prepend('new_head')
-      expect(list.head).to eq('new_head')
-      expect(list.head.next_node).to eq('node1')
+      expect(list.head.value).to eq('new_head')
+      expect(list.head.next_node.value).to eq('node1')
     end
   end
 
