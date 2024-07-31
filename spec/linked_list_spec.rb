@@ -21,8 +21,14 @@ RSpec.describe LinkedList do
       expect(list.size).to eq(2)
     end
 
-    it 'returns the first node of the list'
-    it 'returns the last node of the list'
+    it 'returns the first node of the list' do
+      expect(list.head.value).to eq('node1')
+    end
+
+    it 'returns the last node of the list' do
+      expect(list.tail.value).to eq('node2')
+    end
+
     it 'returns the node at given index'
     it 'checks if a value is in the list'
     it 'returns a value from the list'

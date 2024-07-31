@@ -42,6 +42,14 @@ class LinkedList # rubocop:disable Style/Documentation
     count
   end
 
+  def tail
+    current_node = head
+
+    current_node = current_node.next_node until current_node.next_node.nil?
+
+    current_node
+  end
+
   private
 
   def create(node)
