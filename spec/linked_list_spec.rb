@@ -29,7 +29,11 @@ RSpec.describe LinkedList do
       expect(list.tail.value).to eq('node2')
     end
 
-    it 'returns the node at given index'
+    it 'returns the node at given index' do # rubocop:disable RSpec/MultipleExpectations
+      expect(list.at(2)).to be_nil
+      expect(list.at(1).value).to eq('node2')
+    end
+
     it 'checks if a value is in the list'
     it 'returns a value from the list'
   end

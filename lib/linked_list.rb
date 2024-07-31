@@ -50,6 +50,16 @@ class LinkedList # rubocop:disable Style/Documentation
     current_node
   end
 
+  def at(index)
+    current_node = head
+    until current_node.next_node.nil?
+      current_node = current_node.next_node
+      index -= 1
+    end
+
+    index.zero? ? current_node : nil
+  end
+
   private
 
   def create(node)
