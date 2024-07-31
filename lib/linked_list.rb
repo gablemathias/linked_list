@@ -118,6 +118,16 @@ class LinkedList # rubocop:disable Style/Documentation
     node_before.next_node = new_node
   end
 
+  def remove_at(index)
+    @head = head.next_node if index.zero?
+    return 'invalid index' if at(index).nil?
+
+    target = at(index)
+    node_before = at(index - 1)
+
+    node_before.next_node = target.next_node
+  end
+
   def to_s
     current_node = head
     string = ''

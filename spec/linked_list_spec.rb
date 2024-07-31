@@ -59,11 +59,13 @@ RSpec.describe LinkedList do
       expect(list.insert_at('hakuna', 5)).to eq('invalid index')
     end
 
-    it 'removes a node at the given index'
+    it 'removes a node at the given index' do
+      list.remove_at(1)
+      expect(list.find('node2')).to be_nil
+    end
   end
 
   it 'returns the LinkedList objects as a String' do
-    p list.to_s
     expect(list.to_s).to eq '( node1 ) -> ( node2 ) -> nil'
   end
 end
