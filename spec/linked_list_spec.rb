@@ -9,7 +9,11 @@ RSpec.describe LinkedList do
       expect(result.value).to eq('node3')
     end
 
-    it 'Adds a new node to the beginning of the list'
+    it 'Adds a new node to the beginning of the list' do
+      list.prepend('new_head')
+      expect(list.head).to eq('new_head')
+      expect(list.head.next_node).to eq('node1')
+    end
   end
 
   context 'When iterating the list' do
