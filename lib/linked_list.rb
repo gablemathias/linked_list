@@ -60,6 +60,22 @@ class LinkedList # rubocop:disable Style/Documentation
     index.zero? ? current_node : nil
   end
 
+  # NODE -> NODE -> NODE -> NIL
+  # NODE -> NODE -> NIL
+  def pop
+    last_node = tail
+    if head == last_node
+      @head = nil
+      return last_node
+    end
+
+    current_node = head
+    current_node = current_node.next_node until current_node.next_node == last_node
+
+    current_node.next_node = nil
+    last_node
+  end
+
   private
 
   def create(node)

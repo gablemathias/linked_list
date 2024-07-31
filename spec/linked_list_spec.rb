@@ -39,7 +39,11 @@ RSpec.describe LinkedList do
   end
 
   context 'when modifying the list' do
-    it 'removes the last element of the list'
+    it 'removes the last element of the list and returns it' do # rubocop:disable RSpec/MultipleExpectations
+      expect(list.pop.value).to eq('node2')
+      expect(list.tail.value).to eq('node1')
+    end
+
     it 'inserts a new node at a given index'
     it 'removes a node at the given index'
   end
