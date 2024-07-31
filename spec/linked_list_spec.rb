@@ -50,7 +50,11 @@ RSpec.describe LinkedList do
       expect(list.tail.value).to eq('node1')
     end
 
-    it 'inserts a new node at a given index'
+    it 'inserts a new node at a given index' do
+      list.insert_at('node3', 1)
+      expect(list.at(1).value).to eq('node3')
+    end
+
     it 'removes a node at the given index'
   end
 

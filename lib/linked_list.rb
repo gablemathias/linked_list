@@ -51,8 +51,10 @@ class LinkedList # rubocop:disable Style/Documentation
   end
 
   def at(index)
+    return head if index.zero?
+
     current_node = head
-    until current_node.next_node.nil?
+    until current_node.next_node.nil? || index.zero?
       current_node = current_node.next_node
       index -= 1
     end
@@ -100,6 +102,20 @@ class LinkedList # rubocop:disable Style/Documentation
     end
 
     nil
+  end
+
+  def insert_at(value, index)
+    # NODE1 -> NODE2 -> #NODE3
+    # NODE1 -> NODE4 -> NODE2 -> NODE3
+
+    prepend(value) and return if index.zero?
+    return 'invalid index' if at(index).nil?
+
+    new_node = create(value)
+    node_before = at(index - 1)
+
+    new_node.next_node = node_before.next_node
+    node_before.next_node = new_node
   end
 
   def to_s
