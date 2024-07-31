@@ -76,6 +76,18 @@ class LinkedList # rubocop:disable Style/Documentation
     last_node
   end
 
+  def contains?(value)
+    current_node = head
+
+    until current_node.nil?
+      return true if current_node.value == value
+
+      current_node = current_node.next_node
+    end
+
+    false
+  end
+
   private
 
   def create(node)

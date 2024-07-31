@@ -34,7 +34,10 @@ RSpec.describe LinkedList do
       expect(list.at(1).value).to eq('node2')
     end
 
-    it 'checks if a value is in the list'
+    it 'checks if a value is in the list' do
+      expect(list.contains?('node2')).to be true
+    end
+
     it 'returns a value from the list'
   end
 
