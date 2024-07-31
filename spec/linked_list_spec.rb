@@ -9,7 +9,7 @@ RSpec.describe LinkedList do
       expect(result.value).to eq('node3')
     end
 
-    it 'adds a new node to the beginning of the list' do # rubocop:disable RSpec/MultipleExpectations
+    it 'adds a new node to the beginning of the list' do
       list.prepend('new_head')
       expect(list.head.value).to eq('new_head')
       expect(list.head.next_node.value).to eq('node1')
@@ -29,7 +29,7 @@ RSpec.describe LinkedList do
       expect(list.tail.value).to eq('node2')
     end
 
-    it 'returns the node at given index' do # rubocop:disable RSpec/MultipleExpectations
+    it 'returns the node at given index' do
       expect(list.at(2)).to be_nil
       expect(list.at(1).value).to eq('node2')
     end
@@ -38,11 +38,14 @@ RSpec.describe LinkedList do
       expect(list.contains?('node2')).to be true
     end
 
-    it 'returns a value from the list'
+    it 'returns a value from the list' do
+      expect(list.find('node2')).to eq('node2')
+      expect(list.find('not anymore')).to be_nil
+    end
   end
 
   context 'when modifying the list' do
-    it 'removes the last element of the list and returns it' do # rubocop:disable RSpec/MultipleExpectations
+    it 'removes the last element of the list and returns it' do
       expect(list.pop.value).to eq('node2')
       expect(list.tail.value).to eq('node1')
     end
