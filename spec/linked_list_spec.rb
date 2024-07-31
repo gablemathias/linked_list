@@ -55,6 +55,10 @@ RSpec.describe LinkedList do
       expect(list.at(1).value).to eq('node3')
     end
 
+    it 'returns error when inserting node in invalid index' do
+      expect(list.insert_at('hakuna', 5)).to eq('invalid index')
+    end
+
     it 'removes a node at the given index'
   end
 
