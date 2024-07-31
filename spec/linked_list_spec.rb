@@ -54,5 +54,8 @@ RSpec.describe LinkedList do
     it 'removes a node at the given index'
   end
 
-  it 'prints the LinkedList objects as a String'
+  it 'returns the LinkedList objects as a String' do
+    p list.to_s
+    expect(list.to_s).to eq '( node1 ) -> ( node2 ) -> nil'
+  end
 end

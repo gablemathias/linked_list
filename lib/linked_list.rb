@@ -102,6 +102,20 @@ class LinkedList # rubocop:disable Style/Documentation
     nil
   end
 
+  def to_s
+    current_node = head
+    string = ''
+
+    return 'nil' if current_node.nil?
+
+    until current_node.nil?
+      string += "( #{current_node.value} ) -> "
+      current_node = current_node.next_node
+    end
+
+    "#{string}nil"
+  end
+
   private
 
   def create(node)
