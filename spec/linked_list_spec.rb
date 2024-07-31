@@ -17,7 +17,10 @@ RSpec.describe LinkedList do
   end
 
   context 'when iterating the list' do
-    it 'checks the size of the list'
+    it 'checks the size of the list' do
+      expect(list.size).to eq(2)
+    end
+
     it 'returns the first node of the list'
     it 'returns the last node of the list'
     it 'returns the node at given index'

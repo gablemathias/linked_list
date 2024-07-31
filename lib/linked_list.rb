@@ -28,6 +28,20 @@ class LinkedList # rubocop:disable Style/Documentation
     @head.next_node = old_head
   end
 
+  def size
+    current_node = head
+    count = 0
+
+    loop do
+      break if current_node.nil?
+
+      count += 1
+      current_node = current_node.next_node
+    end
+
+    count
+  end
+
   private
 
   def create(node)
